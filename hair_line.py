@@ -20,7 +20,7 @@ except:
 #import tf
 def imgmsg_to_cv2(img_msg):
     if img_msg.encoding != "bgr8":
-        rospy.logerr("This Coral detect node has been hardcoded to the 'bgr8' encoding.  Come change the code if you're actually trying to implement a new camera")
+        rospy.logerr("This Corasfl detect node has been hardcoded to the 'bgr8' encoding.  Come change the code if you're actually trying to implement a new camera")
     dtype = np.dtype("uint8") # Hardcode to 8 bits...
     dtype = dtype.newbyteorder('>' if img_msg.is_bigendian else '<')
     image_opencv = np.ndarray(shape=(img_msg.height, img_msg.width, 3),dtype=dtype, buffer=img_msg.data)
